@@ -8,7 +8,6 @@ datetime: 日期时间
 base64: base64编码解码
 optional: null处理
 
-
 # 函数式编程
 方法作为入参，函数式接口 作为方法入参，lambda表达式作函数式接口中抽象方法的方法体
 func_interface: 函数式接口，interface上标注@FunctionalInterface
@@ -28,8 +27,27 @@ func_reference: 方法引用
 
 # 流式编程
 
-# 接口优化
-interface_default_func: 接口默认方法
-
+# 接口优化，默认方法
+- 为什么出现？接口增加抽象方法，修改抽象方法之后，所有的实现类都需要修改，破坏了向下兼容
+- 类 implements接口，可以`@Override default`方法
+- 类 extends类 implements接口，优先调用继承类的方法，类优先
+- 类 implements接口1,接口2，必须`@Override 相同的default方法`
 # 日期时间优化
-datetime: 日期时间
+LocalDateTime:
+- LocalDateTime 获取当前时间
+- LocalDateTime 创建时间
+- Loca- lDateTime 格式化 String
+- LocalDateTime 转 timestamp 系统时区
+- LocalDateTime 转 timestamp 东8区
+- timestamp 转 LocalDateTime
+- Date 转 LocalDateTime
+- LocalDateTime 转 Date
+- LocalDateTime 加减
+- LocalDateTime 对比
+# base64
+|Name|Function|
+|---|---|
+|`Base64.getEncoder()/getDecoder()`|RFC4648 Encoder and Decoder|
+|`Base64.getUrlEncoder()/getUrlDecoder()`|RFC4648_URLSAFE  UrlEncoder and UrlDecoder|
+|`Base64.getMimeEncoder()/getMimeDecoder()`|RFC2045 MimeEncoder and MimeDecoder|
+|`Base64.getMimeEncoder(int lineLength, byte[] lineSeparator)/getMimeDecoder()`|RFC2045 MimeEncoder and MimeDecoder|
