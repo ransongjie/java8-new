@@ -24,8 +24,13 @@ func_reference: 方法引用
 - 方法引用，引用方法
 - 引用已有方法 避免自己写lambda表达式，使得代码更加紧凑
 - 方法引用，双冒号::
-
+- 引用方法的方法体 和 函数式接口中的抽象方法 要一致
 # 流式编程
+先打散（stream()/parallelStream()）
+映射map()，
+过滤filter()，
+收集collect()，
+sql中能有的操作，流式编程基本都有
 
 # 接口优化，默认方法
 - 为什么出现？接口增加抽象方法，修改抽象方法之后，所有的实现类都需要修改，破坏了向下兼容
@@ -51,3 +56,7 @@ LocalDateTime:
 |`Base64.getUrlEncoder()/getUrlDecoder()`|RFC4648_URLSAFE  UrlEncoder and UrlDecoder|
 |`Base64.getMimeEncoder()/getMimeDecoder()`|RFC2045 MimeEncoder and MimeDecoder|
 |`Base64.getMimeEncoder(int lineLength, byte[] lineSeparator)/getMimeDecoder()`|RFC2045 MimeEncoder and MimeDecoder|
+
+# Optional
+- 与流式编程结合, 处理 `java.lang.NullPointerException`
+- 常用 `get()`, `isPresent()`, `ifPresent()`
